@@ -1,480 +1,696 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عيادة الرحمة</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="logonobg.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="logonobg.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="logonobg.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="عيادة الرحمة لطب الأسنان – التميز في الابتسامة. أحدث تقنيات طب الأسنان مع فريق طبي متميز.">
+  <title>عيادة الرحمة | طب الأسنان</title>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logonobg.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logonobg.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <div class="logo-container">
-                <img src="logo.png" alt="شعار العيادة" class="logo">
-                <div class="logo-text">
-                    <h3>عيادة الرحمة</h3>
-                    <p>التميز في الابتسامة</p>
-                </div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link active">الرئيسية</a></li>
-                <li><a href="#about" class="nav-link">من نحن</a></li>
-                <li><a href="#doctors" class="nav-link">الأطباء</a></li>
-                <li><a href="#services" class="nav-link">الخدمات</a></li>
-                <li><a href="#contact" class="nav-link">تواصل معنا</a></li>
-            </ul>
-            <button class="cta-button nav-cta">احجز موعدك</button>
-            <div class="mobile-menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-background">
-            <div class="hero-shape shape-1"></div>
-            <div class="hero-shape shape-2"></div>
-            <div class="hero-shape shape-3"></div>
-        </div>
-        <div class="container hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="badge-icon">✨</span>
-                    <span>أفضل عناية بصحة أسنانك</span>
-                </div>
-                <h1 class="hero-title">
-                    ابتسامتك الجميلة
-                    <span class="gradient-text">تبدأ من هنا</span>
-                </h1>
-                <p class="hero-description">
-                    نقدم لك أحدث تقنيات طب الأسنان مع فريق طبي متميز لضمان حصولك على ابتسامة صحية ومشرقة تدوم مدى الحياة
-                </p>
-                <div class="hero-buttons">
-                    <button class="primary-button">احجز موعدك الآن</button>
-                    <button class="secondary-button">تعرف على خدماتنا</button>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <h3 class="stat-number">+5000</h3>
-                        <p class="stat-label">مريض سعيد</p>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <h3 class="stat-number">+10</h3>
-                        <p class="stat-label">سنوات خبرة</p>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <h3 class="stat-number">100%</h3>
-                        <p class="stat-label">رضا العملاء</p>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="floating-card card-1">
-                    <div class="card-icon">🦷</div>
-                    <p>تقويم الأسنان</p>
-                </div>
-                <div class="floating-card card-2">
-                    <div class="card-icon">✨</div>
-                    <p>تبييض الأسنان</p>
-                </div>
-                <div class="floating-card card-3">
-                    <div class="card-icon">🎯</div>
-                    <p>زراعة الأسنان</p>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
-        </div>
-    </section>
+<!-- ══════════════════════ LOADER ══════════════════════ -->
+<div id="loader" role="status" aria-label="جارٍ التحميل">
+  <img src="assets/images/logonobg.png" alt="شعار عيادة الرحمة" class="loader-logo">
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+  <span class="loader-text">عيادة الرحمة</span>
+</div>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">من نحن</span>
-                <h2 class="section-title">عيادة متخصصة في صحة الفم والأسنان</h2>
-                <p class="section-subtitle">نجمع بين الخبرة الطبية والتقنيات الحديثة لنقدم لك أفضل رعاية ممكنة</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <div class="about-feature">
-                        <div class="feature-icon">🏆</div>
-                        <div class="feature-content">
-                            <h3>التميز والجودة</h3>
-                            <p>نلتزم بأعلى معايير الجودة في تقديم خدمات طب الأسنان باستخدام أحدث التقنيات والمعدات الطبية المتطورة</p>
-                        </div>
-                    </div>
-                    <div class="about-feature">
-                        <div class="feature-icon">💎</div>
-                        <div class="feature-content">
-                            <h3>فريق طبي متميز</h3>
-                            <p>فريقنا من الأطباء المؤهلين وذوي الخبرة يضمن لك الحصول على أفضل رعاية طبية بأسلوب احترافي ودود</p>
-                        </div>
-                    </div>
-                    <div class="about-feature">
-                        <div class="feature-icon">🎨</div>
-                        <div class="feature-content">
-                            <h3>تجربة مريحة</h3>
-                            <p>نوفر بيئة هادئة ومريحة مع اهتمام خاص بكل تفاصيل زيارتك لضمان تجربة علاجية ممتعة وخالية من التوتر</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-visual">
-                    <div class="visual-decoration">
-                        <div class="decoration-circle circle-1"></div>
-                        <div class="decoration-circle circle-2"></div>
-                        <div class="decoration-circle circle-3"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ══════════════════════ NAVBAR ══════════════════════ -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="القائمة الرئيسية">
+  <div class="container nav-container">
 
-    <!-- Doctors Section -->
-    <section id="doctors" class="doctors">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">فريقنا الطبي</span>
-                <h2 class="section-title">تعرف على أطبائنا المتميزين</h2>
-                <p class="section-subtitle">خبراء في مجال طب الأسنان يضعون صحتك وراحتك في المقام الأول</p>
-            </div>
-            <div class="doctors-grid">
-                <div class="doctor-card" data-animation="fade-up">
-                    <div class="doctor-image-container">
-                        <div class="doctor-image-placeholder">
-                            <div class="placeholder-icon">👨‍⚕️</div>
-                        </div>
-                        <div class="doctor-badge">أخصائي تجميل</div>
-                    </div>
-                    <div class="doctor-info">
-                        <h3 class="doctor-name">الدكتور حسان</h3>
-                        <p class="doctor-specialty">استشاري طب وتجميل الأسنان</p>
-                        <div class="doctor-qualifications">
-                            <span class="qualification">بكالوريوس طب الأسنان</span>
-                            <span class="qualification">ماجستير تجميل الأسنان</span>
-                        </div>
-                        <p class="doctor-description">
-                            يتمتع الدكتور حسن بخبرة تزيد عن 12 عامًا في مجال طب وتجميل الأسنان، متخصص في تصميم الابتسامة وتركيبات الأسنان التجميلية باستخدام أحدث التقنيات العالمية
-                        </p>
-                        <div class="doctor-expertise">
-                            <span class="expertise-tag">تجميل الأسنان</span>
-                            <span class="expertise-tag">ابتسامة هوليوود</span>
-                            <span class="expertise-tag">التركيبات الثابتة</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="doctor-card" data-animation="fade-up">
-                    <div class="doctor-image-container">
-                        <div class="doctor-image-placeholder">
-                            <div class="placeholder-icon">👩‍⚕️</div>
-                        </div>
-                        <div class="doctor-badge">أخصائي تقويم</div>
-                    </div>
-                    <div class="doctor-info">
-                        <h3 class="doctor-name">الدكتورة روان</h3>
-                        <p class="doctor-specialty">استشارية تقويم الأسنان</p>
-                        <div class="doctor-qualifications">
-                            <span class="qualification">بكالوريوس طب الأسنان</span>
-                            <span class="qualification">دبلوم تقويم الأسنان</span>
-                        </div>
-                        <p class="doctor-description">
-                            الدكتورة روان متخصصة في تقويم الأسنان بخبرة 10 سنوات، تستخدم أحدث تقنيات التقويم الشفاف والتقليدي لتحقيق أفضل النتائج مع العناية الفائقة براحة المريض
-                        </p>
-                        <div class="doctor-expertise">
-                            <span class="expertise-tag">تقويم الأسنان</span>
-                            <span class="expertise-tag">التقويم الشفاف</span>
-                            <span class="expertise-tag">تقويم الأطفال</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <a href="#home" class="logo-wrap" aria-label="الرئيسية">
+      <img src="assets/images/logonobg.png" alt="شعار عيادة الرحمة" width="44" height="44">
+      <div>
+        <div class="logo-name">عيادة الرحمة</div>
+        <div class="logo-tagline">التميز في الابتسامة</div>
+      </div>
+    </a>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">خدماتنا</span>
-                <h2 class="section-title">حلول شاملة لصحة أسنانك</h2>
-                <p class="section-subtitle">نقدم مجموعة متكاملة من الخدمات الطبية بأعلى مستويات الجودة</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card" data-animation="fade-up">
-                    <div class="service-icon-wrapper">
-                        <div class="service-icon">🦷</div>
-                    </div>
-                    <h3 class="service-title">العلاج العام</h3>
-                    <p class="service-description">فحص شامل، تنظيف الأسنان، علاج التسوس، حشوات تجميلية، وعلاج الجذور بأحدث التقنيات</p>
-                    <ul class="service-features">
-                        <li>فحص دوري شامل</li>
-                        <li>تنظيف الجير والبلاك</li>
-                        <li>حشوات تجميلية</li>
-                    </ul>
-                </div>
-                <div class="service-card featured" data-animation="fade-up">
-                    <div class="featured-badge">الأكثر طلبًا</div>
-                    <div class="service-icon-wrapper">
-                        <div class="service-icon">✨</div>
-                    </div>
-                    <h3 class="service-title">تجميل الأسنان</h3>
-                    <p class="service-description">ابتسامة هوليوود، تبييض الأسنان، عدسات الفينير، واللومينير لابتسامة مثالية ومشرقة</p>
-                    <ul class="service-features">
-                        <li>ابتسامة هوليوود</li>
-                        <li>تبييض احترافي</li>
-                        <li>عدسات الأسنان</li>
-                    </ul>
-                </div>
-                <div class="service-card" data-animation="fade-up">
-                    <div class="service-icon-wrapper">
-                        <div class="service-icon">🎯</div>
-                    </div>
-                    <h3 class="service-title">تقويم الأسنان</h3>
-                    <p class="service-description">تقويم تقليدي، تقويم شفاف، وتقويم للأطفال والبالغين لتصحيح وضعية الأسنان بدقة</p>
-                    <ul class="service-features">
-                        <li>تقويم معدني وخزفي</li>
-                        <li>تقويم شفاف (إنفزلاين)</li>
-                        <li>تقويم وقائي للأطفال</li>
-                    </ul>
-                </div>
-                <div class="service-card" data-animation="fade-up">
-                    <div class="service-icon-wrapper">
-                        <div class="service-icon">🌱</div>
-                    </div>
-                    <h3 class="service-title">زراعة الأسنان</h3>
-                    <p class="service-description">زراعة أسنان بتقنيات حديثة، تيجان وجسور ثابتة، وحلول تعويضية متكاملة</p>
-                    <ul class="service-features">
-                        <li>زراعة فورية</li>
-                        <li>تيجان بورسلين</li>
-                        <li>جسور ثابتة</li>
-                    </ul>
-                </div>
-                <div class="service-card" data-animation="fade-up">
-                    <div class="service-icon-wrapper">
-                        <div class="service-icon">👶</div>
-                    </div>
-                    <h3 class="service-title">طب أسنان الأطفال</h3>
-                    <p class="service-description">رعاية خاصة لأسنان الأطفال، علاج وقائي، وتهيئة نفسية مريحة للطفل</p>
-                    <ul class="service-features">
-                        <li>فحص دوري للأطفال</li>
-                        <li>حشوات ملونة</li>
-                        <li>تطبيق الفلورايد</li>
-                    </ul>
-                </div>
-                <div class="service-card" data-animation="fade-up">
-                    <div class="service-icon-wrapper">
-                        <div class="service-icon">🛡️</div>
-                    </div>
-                    <h3 class="service-title">علاج اللثة</h3>
-                    <p class="service-description">علاج التهابات اللثة، جراحات اللثة التجميلية، والوقاية من أمراض اللثة</p>
-                    <ul class="service-features">
-                        <li>علاج التهاب اللثة</li>
-                        <li>تنظيف عميق</li>
-                        <li>جراحات تجميلية</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+    <ul class="nav-links" role="list">
+      <li><a href="#home"        class="nav-link active">الرئيسية</a></li>
+      <li><a href="#about"       class="nav-link">من نحن</a></li>
+      <li><a href="#services"    class="nav-link">الخدمات</a></li>
+      <li><a href="#doctors"     class="nav-link">الأطباء</a></li>
+      <li><a href="#testimonials"class="nav-link">آراء المرضى</a></li>
+      <li><a href="#contact"     class="nav-link">تواصل معنا</a></li>
+    </ul>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <div class="cta-text">
-                    <h2 class="cta-title">جاهز للحصول على ابتسامة أحلامك؟</h2>
-                    <p class="cta-description">احجز موعدك الآن واستمتع بتجربة علاجية متميزة مع أفضل الأطباء</p>
-                </div>
-                <div class="cta-actions">
-                    <button class="cta-primary-button">احجز موعدك الآن</button>
-                    <div class="cta-contact-info">
-                        <span class="contact-item">📞 +966 50 123 4567</span>
-                        <span class="contact-item">⏰ السبت - الخميس: 9 ص - 9 م</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <button class="nav-cta" aria-label="احجز موعدك">احجز موعدك</button>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">تواصل معنا</span>
-                <h2 class="section-title">نحن هنا للإجابة على استفساراتك</h2>
-                <p class="section-subtitle">تواصل معنا عبر الوسيلة المناسبة لك</p>
-            </div>
-            <div class="contact-methods">
-                <a href="https://wa.me/966501234567" class="contact-method whatsapp-method" target="_blank" rel="noopener">
-                    <div class="method-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
-                        </svg>
-                    </div>
-                    <div class="method-content">
-                        <h3>واتساب</h3>
-                        <p>تواصل معنا عبر واتساب</p>
-                        <span class="method-value">+966 50 123 4567</span>
-                    </div>
-                </a>
-                
-                <a href="tel:+966501234567" class="contact-method phone-method">
-                    <div class="method-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
-                        </svg>
-                    </div>
-                    <div class="method-content">
-                        <h3>اتصل بنا مباشرة</h3>
-                        <p>للحجز والاستفسارات</p>
-                        <span class="method-value">+966 50 123 4567</span>
-                    </div>
-                </a>
-                
-                <a href="mailto:info@dentalclinic.sa" class="contact-method email-method">
-                    <div class="method-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                    </div>
-                    <div class="method-content">
-                        <h3>البريد الإلكتروني</h3>
-                        <p>راسلنا عبر البريد</p>
-                        <span class="method-value">info@dentalclinic.sa</span>
-                    </div>
-                </a>
-                
-                <a href="https://maps.google.com/?q=24.7136,46.6753" class="contact-method location-method" target="_blank" rel="noopener">
-                    <div class="method-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                        </svg>
-                    </div>
-                    <div class="method-content">
-                        <h3>موقعنا</h3>
-                        <p>زورنا في العيادة</p>
-                        <span class="method-value">Sample</span>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="contact-info-box">
-                <div class="info-item">
-                    <span class="info-icon">⏰</span>
-                    <div class="info-text">
-                        <h4>ساعات العمل</h4>
-                        <p>السبت - الخميس: 9 ص - 9 م<br>الجمعة: مغلق</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <button class="hamburger" id="hamburger" aria-label="فتح القائمة" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="logonobg.png" alt="شعار العيادة" class="logo">
-                        <h3>عيادة الأسنان</h3>
-                    </div>
-                    <p class="footer-description">نقدم أفضل خدمات طب الأسنان بأحدث التقنيات وأعلى معايير الجودة</p>
-                    <div class="social-links">
-                        <a href="https://facebook.com" target="_blank" rel="noopener" class="social-link facebook" aria-label="فيسبوك">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link instagram" aria-label="انستغرام">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
-                        </a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener" class="social-link twitter" aria-label="تويتر">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                            </svg>
-                        </a>
-                        <a href="https://youtube.com" target="_blank" rel="noopener" class="social-link youtube" aria-label="يوتيوب">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>روابط سريعة</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home">الرئيسية</a></li>
-                        <li><a href="#about">من نحن</a></li>
-                        <li><a href="#doctors">الأطباء</a></li>
-                        <li><a href="#services">الخدمات</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>معلومات مفيدة</h4>
-                    <ul class="footer-links">
-                        <li><a href="https://wa.me/966501234567" target="_blank">احجز موعد</a></li>
-                        <li><a href="#contact">طرق التواصل</a></li>
-                        <li><a href="https://maps.google.com/?q=24.7136,46.6753" target="_blank">الموقع على الخريطة</a></li>
-                        <li><a href="#about">سياسة الخصوصية</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>تواصل معنا</h4>
-                    <ul class="footer-contact">
-                        <li><a href="https://maps.google.com/?q=24.7136,46.6753" target="_blank">📍 sample</a></li>
-                        <li><a href="tel:+966501234567">📞 +966 50 123 4567</a></li>
-                        <li><a href="mailto:info@dentalclinic.sa">📧 info@dentalclinic.sa</a></li>
-                        <li>⏰ 9 ص - 9 م</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 عيادة الرحمة. جميع الحقوق محفوظة.</p>
-            </div>
-        </div>
-    </footer>
+<!-- Mobile nav -->
+<div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="القائمة المتنقلة">
+  <button class="mobile-nav-close" id="mobileClose" aria-label="إغلاق">✕</button>
+  <ul role="list">
+    <li><a href="#home"        class="nav-link">الرئيسية</a></li>
+    <li><a href="#about"       class="nav-link">من نحن</a></li>
+    <li><a href="#services"    class="nav-link">الخدمات</a></li>
+    <li><a href="#doctors"     class="nav-link">الأطباء</a></li>
+    <li><a href="#testimonials"class="nav-link">آراء المرضى</a></li>
+    <li><a href="#contact"     class="nav-link">تواصل معنا</a></li>
+  </ul>
+  <a href="https://wa.me/966501234567" class="btn-primary" target="_blank" rel="noopener" style="margin-top:1rem">احجز موعدك الآن</a>
+</div>
 
-    <!-- شريط التواصل العائم -->
-    <div class="floating-contact-bar" id="contactBar">
-        <a href="https://wa.me/966501234567" class="contact-item whatsapp" data-tooltip="واتساب" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
-            </svg>
-        </a>
-        <a href="https://maps.google.com/?q=24.7136,46.6753" class="contact-item location" data-tooltip="الموقع" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-            </svg>
-        </a>
-        <a href="tel:+966501234567" class="contact-item phone" data-tooltip="اتصل بنا">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
-            </svg>
-        </a>
-        <a href="mailto:info@dentalclinic.sa" class="contact-item email" data-tooltip="البريد">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-            </svg>
-        </a>
+<!-- ══════════════════════ HERO ══════════════════════ -->
+<section id="home" class="hero" aria-label="الرئيسية">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <div class="container">
+    <div class="hero-inner">
+
+      <!-- Content -->
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          أفضل عناية بصحة أسنانك
+        </div>
+
+        <h1 class="hero-title">
+          ابتسامتك الجميلة
+          <span class="highlight">تبدأ من هنا</span>
+        </h1>
+
+        <p class="hero-desc">
+          نقدم لك أحدث تقنيات طب الأسنان مع فريق طبي متميز لضمان حصولك على ابتسامة صحية ومشرقة تدوم مدى الحياة
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn-primary hero-cta-booking">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+            احجز موعدك الآن
+          </button>
+          <a href="#services" class="btn-outline">
+            تعرف على خدماتنا
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="transform:rotate(180deg)"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num" data-count="5000" data-prefix="+" data-suffix="">+5000</div>
+            <div class="stat-label">مريض سعيد</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-num" data-count="10" data-prefix="+" data-suffix="">+10</div>
+            <div class="stat-label">سنوات خبرة</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-num" data-count="100" data-prefix="" data-suffix="%">100%</div>
+            <div class="stat-label">رضا العملاء</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual card -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-card-stack">
+          <div class="main-card">
+            <img src="assets/images/logonobg.png" alt="" class="main-card-logo">
+            <div class="main-card-title">عيادة الرحمة</div>
+            <div class="main-card-sub">التميز في الابتسامة</div>
+          </div>
+          <div class="float-chip chip-1"><span class="chip-icon">🦷</span> تقويم الأسنان</div>
+          <div class="float-chip chip-2"><span class="chip-icon">✨</span> تبييض الأسنان</div>
+          <div class="float-chip chip-3"><span class="chip-icon">🎯</span> زراعة الأسنان</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scroll cue -->
+  <div class="scroll-cue" aria-hidden="true">
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    <span>انزل لأسفل</span>
+  </div>
+</section>
+
+<!-- ══════════════════════ ABOUT ══════════════════════ -->
+<section id="about" class="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">من نحن</span>
+      <h2 class="section-title" id="about-title">عيادة متخصصة في <span class="accent">صحة الفم والأسنان</span></h2>
+      <p class="section-sub">نجمع بين الخبرة الطبية والتقنيات الحديثة لنقدم أفضل رعاية ممكنة</p>
     </div>
 
-    <script src="script.js"></script>
+    <div class="about-inner">
+      <!-- Features -->
+      <div class="about-features">
+        <div class="about-feat reveal">
+          <div class="feat-icon-wrap">🏆</div>
+          <div>
+            <div class="feat-title">التميز والجودة</div>
+            <div class="feat-text">نلتزم بأعلى معايير الجودة باستخدام أحدث التقنيات والمعدات الطبية المتطورة في كل خطوة من خطوات العلاج</div>
+          </div>
+        </div>
+        <div class="about-feat reveal">
+          <div class="feat-icon-wrap">💎</div>
+          <div>
+            <div class="feat-title">فريق طبي متميز</div>
+            <div class="feat-text">فريقنا من الأطباء المؤهلين وذوي الخبرة يضمن لك الحصول على أفضل رعاية طبية بأسلوب احترافي ودود</div>
+          </div>
+        </div>
+        <div class="about-feat reveal">
+          <div class="feat-icon-wrap">🔬</div>
+          <div>
+            <div class="feat-title">تقنيات متقدمة</div>
+            <div class="feat-text">نستخدم أحدث تقنيات التصوير الرقمي والليزر وتصميم الابتسامة لضمان نتائج دقيقة وسريعة</div>
+          </div>
+        </div>
+        <div class="about-feat reveal">
+          <div class="feat-icon-wrap">❤️</div>
+          <div>
+            <div class="feat-title">راحة المريض أولاً</div>
+            <div class="feat-text">بيئتنا المريحة وأسلوبنا الهادئ يجعل زيارتك للعيادة تجربة مريحة وإيجابية بعيداً عن أي قلق</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual -->
+      <div class="about-visual reveal-left">
+        <div class="about-img-wrap">
+          <div class="about-img-inner">
+            <img src="assets/images/logonobg.png" alt="شعار عيادة الرحمة" class="about-big-logo">
+          </div>
+        </div>
+        <div class="about-badge-float">
+          <div class="badge-num">+10</div>
+          <div class="badge-txt">سنوات من<br>التميز الطبي</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ SERVICES ══════════════════════ -->
+<section id="services" aria-labelledby="services-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">خدماتنا</span>
+      <h2 class="section-title" id="services-title">خدمات طب الأسنان <span class="accent">الشاملة</span></h2>
+      <p class="section-sub">نوفر طيفاً واسعاً من خدمات طب الأسنان لتلبية جميع احتياجاتك</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card reveal">
+        <div class="svc-icon">🦷</div>
+        <div class="svc-title">تقويم الأسنان</div>
+        <div class="svc-text">تقويم احترافي شامل باستخدام أحدث تقنيات التقويم الشفاف والمعدني لنتائج مثالية ودائمة</div>
+        <div class="svc-arrow">استفسر الآن ←</div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="svc-icon">✨</div>
+        <div class="svc-title">تبييض الأسنان</div>
+        <div class="svc-text">جلسات تبييض متطورة بالليزر أو المنزلي تمنحك ابتسامة ناصعة البياض في وقت قصير</div>
+        <div class="svc-arrow">استفسر الآن ←</div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="svc-icon">🎯</div>
+        <div class="svc-title">زراعة الأسنان</div>
+        <div class="svc-text">زراعة عالية الجودة بمعدل نجاح يتجاوز 98% لاستعادة وظيفة الأسنان وجمالها بشكل طبيعي</div>
+        <div class="svc-arrow">استفسر الآن ←</div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="svc-icon">👑</div>
+        <div class="svc-title">تركيبات وتيجان</div>
+        <div class="svc-text">تيجان وقشرة السيراميك والزيركون المصنوعة بدقة عالية لمطابقة طبيعة أسنانك الأصلية</div>
+        <div class="svc-arrow">استفسر الآن ←</div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="svc-icon">🔬</div>
+        <div class="svc-title">علاج جذور الأسنان</div>
+        <div class="svc-text">علاج متخصص لحالات التهاب العصب بتقنيات حديثة وبشكل مريح وخالٍ من الألم</div>
+        <div class="svc-arrow">استفسر الآن ←</div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="svc-icon">🛡️</div>
+        <div class="svc-title">وقاية وتنظيف</div>
+        <div class="svc-text">جلسات تنظيف دورية متكاملة تشمل إزالة الجير والتلوين وتلميع الأسنان للحفاظ على صحتها</div>
+        <div class="svc-arrow">استفسر الآن ←</div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="svc-icon">👶</div>
+        <div class="svc-title">طب أسنان الأطفال</div>
+        <div class="svc-text">رعاية متخصصة للأطفال في بيئة مريحة وودية لبناء عادات صحة فم إيجابية منذ الصغر</div>
+        <div class="svc-arrow">استفسر الآن ←</div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="svc-icon">💫</div>
+        <div class="svc-title">تصميم الابتسامة</div>
+        <div class="svc-text">خطة علاج شاملة ومخصصة لتصميم ابتسامة مثالية تناسب ملامح وجهك وتعكس شخصيتك</div>
+        <div class="svc-arrow">استفسر الآن ←</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ DOCTORS ══════════════════════ -->
+<section id="doctors" class="doctors" aria-labelledby="doctors-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">الفريق الطبي</span>
+      <h2 class="section-title" id="doctors-title">نخبة من <span class="accent">أطباء الأسنان</span></h2>
+      <p class="section-sub">فريق من المتخصصين المؤهلين على أعلى مستوى لتقديم أفضل رعاية لك</p>
+    </div>
+
+    <div class="doctors-grid">
+
+      <div class="doctor-card reveal">
+        <div class="doctor-avatar">
+          <div class="doctor-avatar-icon">👨‍⚕️</div>
+          <span class="doctor-spec-tag">تقويم</span>
+        </div>
+        <div class="doctor-info">
+          <div class="doctor-name">د. محمد الأحمد</div>
+          <div class="doctor-title">أخصائي تقويم الأسنان</div>
+          <div class="doctor-exp">خبرة +15 سنة</div>
+          <div class="doctor-divider"></div>
+          <div class="doctor-meta">
+            <span class="doctor-tag">تقويم شفاف</span>
+            <span class="doctor-tag">تقويم معدني</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="doctor-card reveal">
+        <div class="doctor-avatar">
+          <div class="doctor-avatar-icon">👩‍⚕️</div>
+          <span class="doctor-spec-tag">تجميل</span>
+        </div>
+        <div class="doctor-info">
+          <div class="doctor-name">د. سارة العبدالله</div>
+          <div class="doctor-title">أخصائية طب الأسنان التجميلي</div>
+          <div class="doctor-exp">خبرة +12 سنة</div>
+          <div class="doctor-divider"></div>
+          <div class="doctor-meta">
+            <span class="doctor-tag">قشرة السيراميك</span>
+            <span class="doctor-tag">تبييض</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="doctor-card reveal">
+        <div class="doctor-avatar">
+          <div class="doctor-avatar-icon">👨‍⚕️</div>
+          <span class="doctor-spec-tag">زراعة</span>
+        </div>
+        <div class="doctor-info">
+          <div class="doctor-name">د. خالد الرشيد</div>
+          <div class="doctor-title">أخصائي زراعة الأسنان</div>
+          <div class="doctor-exp">خبرة +10 سنوات</div>
+          <div class="doctor-divider"></div>
+          <div class="doctor-meta">
+            <span class="doctor-tag">زراعة فورية</span>
+            <span class="doctor-tag">رفع جيب الجيب</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="doctor-card reveal">
+        <div class="doctor-avatar">
+          <div class="doctor-avatar-icon">👩‍⚕️</div>
+          <span class="doctor-spec-tag">أطفال</span>
+        </div>
+        <div class="doctor-info">
+          <div class="doctor-name">د. نورا الحسن</div>
+          <div class="doctor-title">أخصائية أسنان الأطفال</div>
+          <div class="doctor-exp">خبرة +8 سنوات</div>
+          <div class="doctor-divider"></div>
+          <div class="doctor-meta">
+            <span class="doctor-tag">أطفال</span>
+            <span class="doctor-tag">وقاية</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ TESTIMONIALS ══════════════════════ -->
+<section id="testimonials" class="testimonials" aria-labelledby="testi-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">آراء المرضى</span>
+      <h2 class="section-title" id="testi-title">ماذا يقول <span class="accent">مرضانا</span></h2>
+      <p class="section-sub">آلاف المرضى السعداء يتحدثون عن تجربتهم معنا</p>
+    </div>
+  </div>
+
+  <div class="testi-track-wrap">
+    <div class="testi-track" aria-label="آراء المرضى" role="list">
+      <!-- Set 1 -->
+      <div class="testi-card" role="listitem">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">تجربة رائعة من البداية للنهاية. الفريق الطبي محترف جداً والنتيجة تجاوزت توقعاتي بكثير. أنصح بشدة!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👤</div>
+          <div><div class="testi-name">أحمد المنصور</div><div class="testi-meta">تقويم الأسنان • 2024</div></div>
+        </div>
+      </div>
+
+      <div class="testi-card" role="listitem">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">عملية الزراعة كانت سلسة وبدون أي ألم. د. خالد محترف جداً وشرح كل خطوة بوضوح. شكراً جزيلاً!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👤</div>
+          <div><div class="testi-name">فاطمة العلي</div><div class="testi-meta">زراعة الأسنان • 2024</div></div>
+        </div>
+      </div>
+
+      <div class="testi-card" role="listitem">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">ابتسامتي تغيرت بشكل كامل بعد جلسات التبييض وقشرة السيراميك. النتيجة طبيعية وجميلة جداً!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👤</div>
+          <div><div class="testi-name">منى الزهراني</div><div class="testi-meta">تصميم الابتسامة • 2024</div></div>
+        </div>
+      </div>
+
+      <div class="testi-card" role="listitem">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">أحضرت ابنتي وكانت خائفة جداً، لكن الدكتورة نورا تعاملت معها بطريقة رائعة. لن نذهب لعيادة أخرى!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👤</div>
+          <div><div class="testi-name">هند الشمري</div><div class="testi-meta">أسنان الأطفال • 2024</div></div>
+        </div>
+      </div>
+
+      <div class="testi-card" role="listitem">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">أفضل عيادة أسنان جربتها. النظافة والاحترافية على أعلى مستوى، والأسعار معقولة جداً مقارنة بالجودة.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👤</div>
+          <div><div class="testi-name">بدر القحطاني</div><div class="testi-meta">علاج متكامل • 2023</div></div>
+        </div>
+      </div>
+
+      <div class="testi-card" role="listitem">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">تقويم الأسنان الشفاف غيّر حياتي! العملية كانت مريحة والنتيجة مذهلة. الفريق متابع معي في كل خطوة.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👤</div>
+          <div><div class="testi-name">ريم السالم</div><div class="testi-meta">تقويم شفاف • 2023</div></div>
+        </div>
+      </div>
+
+      <!-- Duplicate set for infinite scroll -->
+      <div class="testi-card" role="listitem" aria-hidden="true">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">تجربة رائعة من البداية للنهاية. الفريق الطبي محترف جداً والنتيجة تجاوزت توقعاتي بكثير. أنصح بشدة!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👤</div>
+          <div><div class="testi-name">أحمد المنصور</div><div class="testi-meta">تقويم الأسنان • 2024</div></div>
+        </div>
+      </div>
+      <div class="testi-card" role="listitem" aria-hidden="true">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">عملية الزراعة كانت سلسة وبدون أي ألم. د. خالد محترف جداً وشرح كل خطوة بوضوح. شكراً جزيلاً!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👤</div>
+          <div><div class="testi-name">فاطمة العلي</div><div class="testi-meta">زراعة الأسنان • 2024</div></div>
+        </div>
+      </div>
+      <div class="testi-card" role="listitem" aria-hidden="true">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">ابتسامتي تغيرت بشكل كامل بعد جلسات التبييض وقشرة السيراميك. النتيجة طبيعية وجميلة جداً!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👤</div>
+          <div><div class="testi-name">منى الزهراني</div><div class="testi-meta">تصميم الابتسامة • 2024</div></div>
+        </div>
+      </div>
+      <div class="testi-card" role="listitem" aria-hidden="true">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">أحضرت ابنتي وكانت خائفة جداً، لكن الدكتورة نورا تعاملت معها بطريقة رائعة. لن نذهب لعيادة أخرى!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👤</div>
+          <div><div class="testi-name">هند الشمري</div><div class="testi-meta">أسنان الأطفال • 2024</div></div>
+        </div>
+      </div>
+      <div class="testi-card" role="listitem" aria-hidden="true">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">أفضل عيادة أسنان جربتها. النظافة والاحترافية على أعلى مستوى، والأسعار معقولة جداً مقارنة بالجودة.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👤</div>
+          <div><div class="testi-name">بدر القحطاني</div><div class="testi-meta">علاج متكامل • 2023</div></div>
+        </div>
+      </div>
+      <div class="testi-card" role="listitem" aria-hidden="true">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">تقويم الأسنان الشفاف غيّر حياتي! العملية كانت مريحة والنتيجة مذهلة. الفريق متابع معي في كل خطوة.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👤</div>
+          <div><div class="testi-name">ريم السالم</div><div class="testi-meta">تقويم شفاف • 2023</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ CONTACT ══════════════════════ -->
+<section id="contact" class="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">تواصل معنا</span>
+      <h2 class="section-title" id="contact-title">احجز موعدك <span class="accent">اليوم</span></h2>
+      <p class="section-sub">فريقنا مستعد لمساعدتك في جميع احتياجاتك الطبية</p>
+    </div>
+
+    <div class="contact-inner">
+
+      <!-- Methods + hours -->
+      <div>
+        <div class="contact-methods">
+          <a href="https://wa.me/966501234567" class="contact-method reveal" target="_blank" rel="noopener" aria-label="واتساب">
+            <div class="method-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
+            </div>
+            <div>
+              <div class="method-title">واتساب</div>
+              <div class="method-sub">للحجز الفوري</div>
+              <div class="method-val">+966 50 123 4567</div>
+            </div>
+          </a>
+
+          <a href="tel:+966501234567" class="contact-method reveal" aria-label="اتصل بنا">
+            <div class="method-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+            </div>
+            <div>
+              <div class="method-title">اتصل بنا</div>
+              <div class="method-sub">مباشرةً على الهاتف</div>
+              <div class="method-val">+966 50 123 4567</div>
+            </div>
+          </a>
+
+          <a href="mailto:info@alrahma-dental.com" class="contact-method reveal" aria-label="البريد الإلكتروني">
+            <div class="method-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <div>
+              <div class="method-title">البريد الإلكتروني</div>
+              <div class="method-sub">راسلنا في أي وقت</div>
+              <div class="method-val">info@alrahma-dental.com</div>
+            </div>
+          </a>
+
+          <a href="https://maps.google.com/?q=24.7136,46.6753" class="contact-method reveal" target="_blank" rel="noopener" aria-label="الموقع">
+            <div class="method-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <div>
+              <div class="method-title">موقعنا</div>
+              <div class="method-sub">زورنا في العيادة</div>
+              <div class="method-val">عنوان العيادة — اضغط للخريطة</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="hours-card reveal">
+          <div class="hours-title">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+            ساعات العمل
+          </div>
+          <div class="hours-row"><span class="day">السبت – الأربعاء</span><span class="time">9 ص – 9 م</span></div>
+          <div class="hours-row"><span class="day">الخميس</span><span class="time">9 ص – 6 م</span></div>
+          <div class="hours-row closed"><span class="day">الجمعة</span><span class="time">مغلق</span></div>
+        </div>
+      </div>
+
+      <!-- Booking form -->
+      <div class="reveal-left">
+        <div class="booking-form-wrap">
+          <div class="form-title">احجز موعدك</div>
+          <div class="form-sub">سيتواصل معك فريقنا في أقرب وقت لتأكيد الموعد</div>
+
+          <form id="bookingForm" novalidate>
+            <div class="form-row cols-2">
+              <div class="form-group">
+                <label class="form-label" for="fname">الاسم الكامل</label>
+                <input class="form-input" id="fname" type="text" placeholder="محمد أحمد" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="fphone">رقم الهاتف</label>
+                <input class="form-input" id="fphone" type="tel" placeholder="+966 5X XXX XXXX" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="fservice">الخدمة المطلوبة</label>
+                <select class="form-select" id="fservice">
+                  <option value="" disabled selected>اختر الخدمة</option>
+                  <option>تقويم الأسنان</option>
+                  <option>تبييض الأسنان</option>
+                  <option>زراعة الأسنان</option>
+                  <option>تركيبات وتيجان</option>
+                  <option>علاج جذور الأسنان</option>
+                  <option>وقاية وتنظيف</option>
+                  <option>طب أسنان الأطفال</option>
+                  <option>تصميم الابتسامة</option>
+                  <option>أخرى</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="fnotes">ملاحظات إضافية (اختياري)</label>
+                <textarea class="form-textarea" id="fnotes" placeholder="أي تفاصيل تود إضافتها..."></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn-submit">إرسال طلب الحجز</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ FOOTER ══════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <div class="logo-wrap">
+          <img src="assets/images/logonobg.png" alt="شعار عيادة الرحمة" width="38" height="38">
+          <div>
+            <div class="logo-name">عيادة الرحمة</div>
+            <div class="logo-tagline">التميز في الابتسامة</div>
+          </div>
+        </div>
+        <p>نقدم أفضل خدمات طب الأسنان بأحدث التقنيات وأعلى معايير الجودة لضمان ابتسامتك المثالية</p>
+        <div class="footer-social">
+          <a href="https://facebook.com" class="social-btn" target="_blank" rel="noopener" aria-label="فيسبوك">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://instagram.com" class="social-btn" target="_blank" rel="noopener" aria-label="انستغرام">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://twitter.com" class="social-btn" target="_blank" rel="noopener" aria-label="تويتر">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+          </a>
+          <a href="https://wa.me/966501234567" class="social-btn" target="_blank" rel="noopener" aria-label="واتساب">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>روابط سريعة</h5>
+        <ul>
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#services">خدماتنا</a></li>
+          <li><a href="#doctors">الأطباء</a></li>
+          <li><a href="#testimonials">آراء المرضى</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>الخدمات</h5>
+        <ul>
+          <li><a href="#services">تقويم الأسنان</a></li>
+          <li><a href="#services">تبييض الأسنان</a></li>
+          <li><a href="#services">زراعة الأسنان</a></li>
+          <li><a href="#services">تصميم الابتسامة</a></li>
+          <li><a href="#services">طب أسنان الأطفال</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>تواصل معنا</h5>
+        <ul>
+          <li><a href="https://maps.google.com/?q=24.7136,46.6753" target="_blank" rel="noopener">📍 عنوان العيادة</a></li>
+          <li><a href="tel:+966501234567">📞 +966 50 123 4567</a></li>
+          <li><a href="mailto:info@alrahma-dental.com">📧 info@alrahma-dental.com</a></li>
+          <li>⏰ 9 ص – 9 م (السبت–الأربعاء)</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 عيادة الرحمة. جميع الحقوق محفوظة.</span>
+      <span>صُنع بـ ❤️ لرسم الابتسامات</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════ FLOATING BAR ══════════════════════ -->
+<div class="float-bar" role="complementary" aria-label="وسائل التواصل السريع">
+  <a href="https://wa.me/966501234567" class="float-btn whatsapp" target="_blank" rel="noopener" aria-label="واتساب">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
+    <span>واتساب</span>
+  </a>
+  <div class="float-divider"></div>
+  <a href="tel:+966501234567" class="float-btn phone" aria-label="اتصل بنا">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+    <span>اتصل بنا</span>
+  </a>
+  <div class="float-divider"></div>
+  <a href="https://maps.google.com/?q=24.7136,46.6753" class="float-btn location" target="_blank" rel="noopener" aria-label="الموقع">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    <span>موقعنا</span>
+  </a>
+</div>
+
+<!-- Script -->
+<script src="assets/js/main.js"></script>
 </body>
 </html>
