@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', onScroll, { passive: true });
 
   // ── MOBILE MENU ─────────────────────────────────────
-  const hamburger  = document.getElementById('hamburger');
-  const mobileNav  = document.getElementById('mobileNav');
-  const mobileClose= document.getElementById('mobileClose');
+  const hamburger   = document.getElementById('hamburger');
+  const mobileNav   = document.getElementById('mobileNav');
+  const mobileClose = document.getElementById('mobileClose');
 
   hamburger?.addEventListener('click', () => {
     hamburger.classList.toggle('open');
@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
   mobileNav?.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', closeMobile));
 
   // ── ACTIVE NAV LINK ─────────────────────────────────
-  const sections  = document.querySelectorAll('section[id]');
-  const navLinks  = document.querySelectorAll('.nav-link[href^="#"]');
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
   const updateActiveLink = () => {
     let current = '';
     sections.forEach(s => {
@@ -51,10 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const revealEls = document.querySelectorAll('.reveal, .reveal-left');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        io.unobserve(e.target);
-      }
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   revealEls.forEach((el, i) => {
@@ -67,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('mousemove', e => {
       const rect = card.getBoundingClientRect();
       card.style.setProperty('--mx', `${((e.clientX - rect.left) / rect.width * 100).toFixed(1)}%`);
-      card.style.setProperty('--my', `${((e.clientY - rect.top)  / rect.height* 100).toFixed(1)}%`);
+      card.style.setProperty('--my', `${((e.clientY - rect.top)  / rect.height * 100).toFixed(1)}%`);
     });
   });
 
@@ -93,19 +90,59 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.5 });
   counters.forEach(c => countIO.observe(c));
 
-  // ── BOOKING FORM ─────────────────────────────────────
-  const form = document.getElementById('bookingForm');
-  form?.addEventListener('submit', e => {
-    e.preventDefault();
-    const btn  = form.querySelector('.btn-submit');
-    const orig = btn.textContent;
-    btn.textContent = '✓ تم الإرسال بنجاح';
-    btn.style.background = 'linear-gradient(135deg,#10b981,#059669)';
-    setTimeout(() => {
-      btn.textContent = orig;
-      btn.style.background = '';
-      form.reset();
-    }, 3000);
+  // ── GALLERY LIGHTBOX ────────────────────────────────
+  const lightbox     = document.getElementById('lightbox');
+  const lightboxImg  = document.getElementById('lightboxImg');
+  const lightboxCap  = document.getElementById('lightboxCaption');
+  const lightboxClose= document.getElementById('lightboxClose');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+
+  const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+  let   currentGalleryIdx = 0;
+
+  const openLightbox = (idx) => {
+    const wrap = galleryItems[idx].querySelector('.gallery-img-wrap');
+    const img  = wrap.querySelector('img');
+    const cap  = galleryItems[idx].querySelector('.gallery-overlay span');
+    if (!img || wrap.classList.contains('placeholder')) return;
+    currentGalleryIdx  = idx;
+    lightboxImg.src    = img.src;
+    lightboxImg.alt    = img.alt;
+    lightboxCap.textContent = cap?.textContent || '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLightbox = () => {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  const navigateLightbox = (dir) => {
+    let next = currentGalleryIdx + dir;
+    if (next < 0) next = galleryItems.length - 1;
+    if (next >= galleryItems.length) next = 0;
+    openLightbox(next);
+  };
+
+  galleryItems.forEach((item, i) => {
+    item.addEventListener('click', () => openLightbox(i));
+  });
+
+  lightboxClose?.addEventListener('click', closeLightbox);
+  lightboxPrev?.addEventListener('click',  () => navigateLightbox(1));
+  lightboxNext?.addEventListener('click',  () => navigateLightbox(-1));
+
+  lightbox?.addEventListener('click', e => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (!lightbox?.classList.contains('open')) return;
+    if (e.key === 'Escape')     closeLightbox();
+    if (e.key === 'ArrowRight') navigateLightbox(1);
+    if (e.key === 'ArrowLeft')  navigateLightbox(-1);
   });
 
   // ── SMOOTH SCROLL ────────────────────────────────────
