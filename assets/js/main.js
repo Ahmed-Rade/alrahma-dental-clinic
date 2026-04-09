@@ -4,6 +4,24 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ── THEME TOGGLE ────────────────────────────────────
+  // Persists user preference in localStorage
+  // Default = dark. Reads from: document.documentElement[data-theme]
+  const html = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('alrahma-theme') || 'dark';
+  html.setAttribute('data-theme', savedTheme);
+
+  themeToggle?.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme');
+    const next    = current === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('alrahma-theme', next);
+    // Ripple feedback
+    themeToggle.style.transform = 'scale(0.92)';
+    setTimeout(() => themeToggle.style.transform = '', 150);
+  });
+
   // ── LOADER ──────────────────────────────────────────
   const loader = document.getElementById('loader');
   window.addEventListener('load', () => {
@@ -133,10 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
   lightboxClose?.addEventListener('click', closeLightbox);
   lightboxPrev?.addEventListener('click',  () => navigateLightbox(1));
   lightboxNext?.addEventListener('click',  () => navigateLightbox(-1));
-
-  lightbox?.addEventListener('click', e => {
-    if (e.target === lightbox) closeLightbox();
-  });
+  lightbox?.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
 
   document.addEventListener('keydown', e => {
     if (!lightbox?.classList.contains('open')) return;
@@ -160,6 +175,40 @@ document.addEventListener('DOMContentLoaded', () => {
     b.addEventListener('click', () => {
       document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
     });
+  });
+
+  // ── HOURS: HIGHLIGHT TODAY ───────────────────────────
+  // Highlights today's row in the hours card
+  // Days: 0=Sun, 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat
+  const day = new Date().getDay();
+  const openDays  = [0, 1, 2, 3, 6]; // Sun=0 (mapped: Sat-Wed for Arabic week)
+  // Arabic week: Sat(6)–Wed(3) = open, Thu(4)=early close, Fri(5)=closed
+  // Adjust "today" badge + open/closed state
+  const isOpen    = openDays.includes(day) || day === 4; // Thu early close still open
+  const isClosed  = day === 5; // Friday
+
+  const openBadge = document.querySelector('.hours-open-badge');
+  if (openBadge) {
+    if (isClosed) {
+      openBadge.textContent = 'مغلق اليوم';
+      openBadge.style.cssText = 'background:rgba(248,113,113,0.12);color:#f87171;border:1px solid rgba(248,113,113,0.25)';
+    } else {
+      openBadge.textContent = 'مفتوح الآن';
+      openBadge.style.cssText = 'background:rgba(52,211,153,0.12);color:#34d399;border:1px solid rgba(52,211,153,0.25)';
+    }
+  }
+
+  // ── CONTACT MAP → Google Maps ────────────────────────
+  // Clicking the map placeholder opens Google Maps
+  document.querySelector('.contact-map')?.addEventListener('click', () => {
+    window.open('https://maps.google.com/?q=24.7136,46.6753', '_blank', 'noopener');
+  });
+
+  // ── BACK TO TOP ON LOGO CLICK ────────────────────────
+  document.querySelector('.logo-wrap')?.addEventListener('click', e => {
+    if (e.currentTarget.tagName !== 'A') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   });
 
 });
