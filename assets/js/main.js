@@ -5,11 +5,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ── THEME TOGGLE ────────────────────────────────────
-  // Persists user preference in localStorage
-  // Default = dark. Reads from: document.documentElement[data-theme]
+  // Default = LIGHT. User preference saved in localStorage.
   const html = document.documentElement;
   const themeToggle = document.getElementById('themeToggle');
-  const savedTheme = localStorage.getItem('alrahma-theme') || 'dark';
+  const savedTheme = localStorage.getItem('alrahma-theme') || 'light';
   html.setAttribute('data-theme', savedTheme);
 
   themeToggle?.addEventListener('click', () => {
@@ -17,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const next    = current === 'dark' ? 'light' : 'dark';
     html.setAttribute('data-theme', next);
     localStorage.setItem('alrahma-theme', next);
-    // Ripple feedback
     themeToggle.style.transform = 'scale(0.92)';
     setTimeout(() => themeToggle.style.transform = '', 150);
   });
@@ -37,22 +35,31 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', onScroll, { passive: true });
 
   // ── MOBILE MENU ─────────────────────────────────────
+  // Only one X: the hamburger itself transforms to X when open.
+  // No separate close button needed (it's hidden via CSS).
   const hamburger   = document.getElementById('hamburger');
   const mobileNav   = document.getElementById('mobileNav');
-  const mobileClose = document.getElementById('mobileClose');
 
   hamburger?.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileNav?.classList.toggle('show');
-    document.body.style.overflow = mobileNav?.classList.contains('show') ? 'hidden' : '';
+    const isOpen = hamburger.classList.toggle('open');
+    mobileNav?.classList.toggle('show', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    hamburger.setAttribute('aria-expanded', String(isOpen));
   });
+
   const closeMobile = () => {
     hamburger?.classList.remove('open');
     mobileNav?.classList.remove('show');
     document.body.style.overflow = '';
+    hamburger?.setAttribute('aria-expanded', 'false');
   };
-  mobileClose?.addEventListener('click', closeMobile);
+
+  // Close on nav link tap
   mobileNav?.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', closeMobile));
+  // Close on backdrop tap (clicking outside the nav links area)
+  mobileNav?.addEventListener('click', e => {
+    if (e.target === mobileNav) closeMobile();
+  });
 
   // ── ACTIVE NAV LINK ─────────────────────────────────
   const sections = document.querySelectorAll('section[id]');
@@ -77,9 +84,18 @@ document.addEventListener('DOMContentLoaded', () => {
     io.observe(el);
   });
 
-  // ── SERVICE CARD MOUSE PARALLAX ─────────────────────
+  // ── SERVICES ACCORDION (mobile) ─────────────────────
+  // HTML already has .svc-header / .svc-body structure.
+  // Just wire up click toggles here.
   document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const wasOpen = card.classList.contains('svc-open');
+      document.querySelectorAll('.service-card.svc-open').forEach(c => c.classList.remove('svc-open'));
+      if (!wasOpen) card.classList.add('svc-open');
+    });
+    // Mouse parallax glow (desktop only)
     card.addEventListener('mousemove', e => {
+      if (window.innerWidth <= 768) return;
       const rect = card.getBoundingClientRect();
       card.style.setProperty('--mx', `${((e.clientX - rect.left) / rect.width * 100).toFixed(1)}%`);
       card.style.setProperty('--my', `${((e.clientY - rect.top)  / rect.height * 100).toFixed(1)}%`);
@@ -131,34 +147,74 @@ document.addEventListener('DOMContentLoaded', () => {
     lightbox.classList.add('open');
     document.body.style.overflow = 'hidden';
   };
-
   const closeLightbox = () => {
     lightbox.classList.remove('open');
     document.body.style.overflow = '';
   };
-
   const navigateLightbox = (dir) => {
     let next = currentGalleryIdx + dir;
     if (next < 0) next = galleryItems.length - 1;
     if (next >= galleryItems.length) next = 0;
     openLightbox(next);
   };
-
-  galleryItems.forEach((item, i) => {
-    item.addEventListener('click', () => openLightbox(i));
-  });
-
+  galleryItems.forEach((item, i) => item.addEventListener('click', () => openLightbox(i)));
   lightboxClose?.addEventListener('click', closeLightbox);
-  lightboxPrev?.addEventListener('click',  () => navigateLightbox(1));
-  lightboxNext?.addEventListener('click',  () => navigateLightbox(-1));
+  lightboxPrev?.addEventListener('click', () => navigateLightbox(1));
+  lightboxNext?.addEventListener('click', () => navigateLightbox(-1));
   lightbox?.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-
   document.addEventListener('keydown', e => {
     if (!lightbox?.classList.contains('open')) return;
     if (e.key === 'Escape')     closeLightbox();
     if (e.key === 'ArrowRight') navigateLightbox(1);
     if (e.key === 'ArrowLeft')  navigateLightbox(-1);
   });
+
+  // ── TESTIMONIALS — expandable + swipe dots ──────────
+  const testiCards = Array.from(document.querySelectorAll('.testi-card:not([aria-hidden])'));
+
+  // Add "read more" button to each card
+  testiCards.forEach(card => {
+    const readMore = document.createElement('span');
+    readMore.className = 'testi-read-more';
+    readMore.innerHTML = '<span class="testi-read-more-text"></span>';
+    card.appendChild(readMore);
+
+    const toggle = () => {
+      card.classList.toggle('testi-expanded');
+    };
+    readMore.addEventListener('click', e => { e.stopPropagation(); toggle(); });
+    card.addEventListener('click', toggle);
+  });
+
+  // Scroll indicator dots (mobile)
+  const trackWrap = document.querySelector('.testi-track-wrap');
+  const track     = document.querySelector('.testi-track');
+
+  if (testiCards.length > 0) {
+    const dotsContainer = document.createElement('div');
+    dotsContainer.className = 'testi-dots';
+    testiCards.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'testi-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `المراجعة ${i + 1}`);
+      dot.addEventListener('click', () => {
+        const card = testiCards[i];
+        card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      });
+      dotsContainer.appendChild(dot);
+    });
+    trackWrap?.parentElement?.appendChild(dotsContainer);
+
+    // Update dots on scroll
+    trackWrap?.addEventListener('scroll', () => {
+      const scrollLeft = trackWrap.scrollLeft;
+      const cardWidth  = testiCards[0]?.offsetWidth + 16; // gap
+      const activeIdx  = Math.round(scrollLeft / cardWidth);
+      dotsContainer.querySelectorAll('.testi-dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === activeIdx);
+      });
+    }, { passive: true });
+  }
 
   // ── SMOOTH SCROLL ────────────────────────────────────
   document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -178,37 +234,37 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── HOURS: HIGHLIGHT TODAY ───────────────────────────
-  // Highlights today's row in the hours card
-  // Days: 0=Sun, 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat
-  const day = new Date().getDay();
-  const openDays  = [0, 1, 2, 3, 6]; // Sun=0 (mapped: Sat-Wed for Arabic week)
-  // Arabic week: Sat(6)–Wed(3) = open, Thu(4)=early close, Fri(5)=closed
-  // Adjust "today" badge + open/closed state
-  const isOpen    = openDays.includes(day) || day === 4; // Thu early close still open
-  const isClosed  = day === 5; // Friday
-
+  const day      = new Date().getDay();
+  const isClosed = day === 5; // Friday
   const openBadge = document.querySelector('.hours-open-badge');
   if (openBadge) {
     if (isClosed) {
       openBadge.textContent = 'مغلق اليوم';
-      openBadge.style.cssText = 'background:rgba(248,113,113,0.12);color:#f87171;border:1px solid rgba(248,113,113,0.25)';
+      openBadge.style.cssText = 'background:rgba(248,113,113,0.12);color:#f87171;border:1px solid rgba(248,113,113,0.25);font-size:.65rem;font-weight:700;padding:.18rem .55rem;border-radius:36px;letter-spacing:.05em';
     } else {
       openBadge.textContent = 'مفتوح الآن';
-      openBadge.style.cssText = 'background:rgba(52,211,153,0.12);color:#34d399;border:1px solid rgba(52,211,153,0.25)';
+      openBadge.style.cssText = 'background:rgba(52,211,153,0.12);color:#34d399;border:1px solid rgba(52,211,153,0.25);font-size:.65rem;font-weight:700;padding:.18rem .55rem;border-radius:36px;letter-spacing:.05em';
     }
   }
 
   // ── CONTACT MAP → Google Maps ────────────────────────
-  // Clicking the map placeholder opens Google Maps
   document.querySelector('.contact-map')?.addEventListener('click', () => {
     window.open('https://maps.google.com/?q=24.7136,46.6753', '_blank', 'noopener');
   });
-
-  // ── BACK TO TOP ON LOGO CLICK ────────────────────────
-  document.querySelector('.logo-wrap')?.addEventListener('click', e => {
-    if (e.currentTarget.tagName !== 'A') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.querySelector('.contact-map')?.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      window.open('https://maps.google.com/?q=24.7136,46.6753', '_blank', 'noopener');
     }
+  });
+
+  // ── FOOTER ACCORDION (mobile) ────────────────────────
+  document.querySelectorAll('.footer-col').forEach(col => {
+    const h5 = col.querySelector('h5');
+    h5?.addEventListener('click', () => {
+      const wasOpen = col.classList.contains('fc-open');
+      document.querySelectorAll('.footer-col.fc-open').forEach(c => c.classList.remove('fc-open'));
+      if (!wasOpen) col.classList.add('fc-open');
+    });
   });
 
 });
