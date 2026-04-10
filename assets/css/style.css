@@ -212,6 +212,18 @@ body::before{
 /* Hide the old separate close button — hamburger itself becomes the X */
 .mobile-nav-close{display:none}
 
+/* Mobile theme toggle row */
+.mobile-theme-row{
+  display:flex;align-items:center;gap:.75rem;
+  background:rgba(56,189,248,0.06);
+  border:1px solid var(--c-border);
+  border-radius:14px;
+  padding:.65rem 1.1rem;
+  margin-bottom:.5rem;
+}
+.mobile-theme-label{font-size:.85rem;font-weight:600;color:var(--c-muted)}
+.mobile-theme-row .theme-toggle{display:flex !important}
+
 /* ===== HERO ===== */
 .hero{min-height:100dvh;display:flex;align-items:center;padding-top:5rem;position:relative;overflow:hidden}
 .hero-bg{
@@ -718,28 +730,14 @@ body::before{
   animation:mapPing 2s ease infinite;
 }
 @keyframes mapPing{0%{transform:scale(1);opacity:1}100%{transform:scale(2.5);opacity:0}}
-/* Map grid dots — replaced with a richer street-map-like background */
+/* Map simple dot grid (original) */
 .contact-map::before{
   content:'';position:absolute;inset:0;border-radius:24px;
-  background:
-    /* Subtle radial glow center */
-    radial-gradient(ellipse 60% 60% at 50% 50%, rgba(56,189,248,0.07) 0%, transparent 70%),
-    /* Horizontal "road" lines */
-    repeating-linear-gradient(0deg, transparent, transparent 38px, rgba(56,189,248,0.06) 38px, rgba(56,189,248,0.06) 39px),
-    /* Vertical "road" lines */
-    repeating-linear-gradient(90deg, transparent, transparent 54px, rgba(56,189,248,0.06) 54px, rgba(56,189,248,0.06) 55px),
-    /* Corner accent lines */
-    linear-gradient(135deg, rgba(56,189,248,0.04) 0%, transparent 50%, rgba(56,189,248,0.03) 100%);
+  background-image:linear-gradient(rgba(56,189,248,0.05) 1px, transparent 1px),
+                   linear-gradient(90deg, rgba(56,189,248,0.05) 1px, transparent 1px);
+  background-size:30px 30px;
 }
-/* Map road highlights */
-.contact-map::after{
-  content:'';position:absolute;inset:0;border-radius:24px;pointer-events:none;
-  background:
-    /* Thicker "main road" horizontal */
-    linear-gradient(transparent 48%, rgba(56,189,248,0.09) 48.5%, rgba(56,189,248,0.09) 51.5%, transparent 52%),
-    /* Thicker "main road" vertical */
-    linear-gradient(90deg, transparent 43%, rgba(56,189,248,0.09) 43.5%, rgba(56,189,248,0.09) 56.5%, transparent 57%);
-}
+.contact-map::after{content:none}
 
 /* ===== FOOTER ===== */
 .footer{background:var(--c-surface);border-top:1px solid var(--c-border);padding:3.5rem 0 0}
@@ -992,7 +990,7 @@ body::before{
 }
 @media(min-width:769px){.float-btn span{display:inline}}
 
-/* ===== LIGHT MODE overrides for components that need it ===== */
+/* ===== LIGHT MODE overrides ===== */
 [data-theme="light"] .main-card{background:#fff;border-color:rgba(2,132,199,0.15)}
 [data-theme="light"] .float-chip{background:#fff;border-color:rgba(2,132,199,0.15);color:#1e3a5f}
 [data-theme="light"] .testi-card{box-shadow:0 2px 20px rgba(0,0,0,0.06)}
@@ -1000,8 +998,14 @@ body::before{
 [data-theme="light"] .about-feat{box-shadow:0 2px 12px rgba(0,0,0,0.04)}
 [data-theme="light"] .section-title{color:#0f172a}
 [data-theme="light"] .hero-title{color:#0f172a}
-[data-theme="light"] .feat-title,.doc-name{color:#0f172a}
+[data-theme="light"] .feat-title{color:#0f172a}
 [data-theme="light"] .svc-title{color:#0f172a}
 [data-theme="light"] .logo-name{color:#0f172a}
 [data-theme="light"] .doc-name{color:#0f172a}
 [data-theme="light"] .footer-col h5{color:#0f172a}
+[data-theme="light"] .cht-title{color:#0f172a}
+[data-theme="light"] .cac-value{color:#0f172a}
+[data-theme="light"] .hours-title{color:#0f172a}
+[data-theme="light"] .testi-name{color:#0f172a}
+[data-theme="light"] .cbig-label{color:#5580a0}
+[data-theme="light"] .cbig-val{color:#0f172a}

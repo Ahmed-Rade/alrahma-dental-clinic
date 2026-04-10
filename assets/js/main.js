@@ -8,17 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // Default = LIGHT. User preference saved in localStorage.
   const html = document.documentElement;
   const themeToggle = document.getElementById('themeToggle');
+  const themeToggleMobile = document.getElementById('themeToggleMobile');
   const savedTheme = localStorage.getItem('alrahma-theme') || 'light';
   html.setAttribute('data-theme', savedTheme);
 
-  themeToggle?.addEventListener('click', () => {
+  const applyTheme = (btn) => {
     const current = html.getAttribute('data-theme');
     const next    = current === 'dark' ? 'light' : 'dark';
     html.setAttribute('data-theme', next);
     localStorage.setItem('alrahma-theme', next);
-    themeToggle.style.transform = 'scale(0.92)';
-    setTimeout(() => themeToggle.style.transform = '', 150);
-  });
+    if (btn) { btn.style.transform = 'scale(0.92)'; setTimeout(() => btn.style.transform = '', 150); }
+  };
+
+  themeToggle?.addEventListener('click', () => applyTheme(themeToggle));
+  themeToggleMobile?.addEventListener('click', () => applyTheme(themeToggleMobile));
 
   // ── LOADER ──────────────────────────────────────────
   const loader = document.getElementById('loader');
