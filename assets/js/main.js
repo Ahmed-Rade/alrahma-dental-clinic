@@ -112,10 +112,28 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
   revealEls.forEach((el, i) => {
-    el.style.transitionDelay = `${(i % 6) * 0.08}s`;
+    el.style.transitionDelay = `${(i % 8) * 0.07}s`;
     io.observe(el);
+  });
+
+  // ── DOCTOR CARD 3D TILT ─────────────────────────────
+  document.querySelectorAll('.doctor-card-v2').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      if (window.innerWidth <= 768) return;
+      const rect = card.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const dx = (e.clientX - cx) / rect.width * 10;
+      const dy = (e.clientY - cy) / rect.height * 10;
+      card.style.transform = `translateY(-6px) rotateY(${dx}deg) rotateX(${-dy}deg)`;
+      card.style.transition = 'transform 0.1s ease';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+      card.style.transition = 'all .4s cubic-bezier(0.16,1,0.3,1)';
+    });
   });
 
   // ── SERVICES ACCORDION (mobile) ─────────────────────
